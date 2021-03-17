@@ -1,0 +1,17 @@
+ 
+ body {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+ }
+ .logo{
+    display:block;
+    margin:auto;
+    width: 310px;
+    left: 310px;
+    padding-top: 9%;
+   }
+#input {
+  display:block;
+  margin:auto;
+  padding: 0,5rem;
+  background: #fbc2eb;
+}

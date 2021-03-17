@@ -1,9 +1,9 @@
 import { example, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('pokemon', () => {
+  it('is a object', () => {
+    expect(typeof example).toBe('object');
   });
 
   it('returns `example`', () => {
@@ -12,7 +12,7 @@ describe('example', () => {
 });
 
 
-describe('anotherExample', () => {
+describe('filtrarNombres', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
