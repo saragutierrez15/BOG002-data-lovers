@@ -1,17 +1,63 @@
  
- body {
+body {
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
  }
- .logo{
+.logo {
     display:block;
     margin:auto;
     width: 310px;
     left: 310px;
-    padding-top: 9%;
+    padding-top: 6%;
    }
+.lupa {
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      outline: none;
+   }
+.menu {
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      outline: none;
+      width: 35px;
+      height: 35px;
+      left: 1226px;
+      top: 36px;
+  }
+
 #input {
   display:block;
   margin:auto;
+  width: 500px;
+  height:60px;
+  left: 100px;
+  top: 128px; 
   padding: 0,5rem;
-  background: #fbc2eb;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-top: 3%;
+
 }
+
+::placeholder {
+   display:block;
+   margin:auto;
+   width: 228px;
+   height: 90px;
+   right: 90px;
+   top: 10%;
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 150%;
+   line-height: 23px;
+   color: #FFFFFF;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+};
+
