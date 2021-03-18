@@ -3,7 +3,7 @@ import data from './data/pokemon/pokemon.js';
 const pokemonEnPantalla = document.getElementById('pokemonEnPantalla');
 
 for(let i = 0;i<data.pokemon.length;i ++) {
-    let nombrePokemon = data.pokemon[i]['name'].toUpperCase();
+    //let nombrePokemon = data.pokemon[i]['name'].toUpperCase();//
     let numPokemon = data.pokemon[i]['num'];
     let urlImagen = data.pokemon[i]['img'];
     let imagen = new Image (150,150);
