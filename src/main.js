@@ -1,60 +1,42 @@
 import data from './data/pokemon/pokemon.js';
 
+
 const pokemonEnPantalla = document.getElementById('pokemonEnPantalla');
-
+//Creamos un for para obtener la imagen, el nombre y el numero de cada pokemon
 for(let i = 0;i<data.pokemon.length;i ++) {
-    //let nombrePokemon = data.pokemon[i]['name'].toUpperCase();//
-    let numPokemon = data.pokemon[i]['num'];
+    let nombrePokemon = data.pokemon[i]['name'].charAt(0).toUpperCase() + data.pokemon[i]['name'].slice(1);
+    let numPokemon = 'N.' + data.pokemon[i]['num'];
     let urlImagen = data.pokemon[i]['img'];
-    let imagen = new Image (150,150);
-    imagen.src = urlImagen;
-    let divTitulo = document.createElement ('div')
-    divTitulo.innerHTML = nombrePokemon +' ' + numPokemon;
+    let imagen = new Image (155,155);
+    imagen.src = urlImagen; 
+// Creamos un div para mostrar el nombre y el numero del pokémon en la card //
+    let divNumero = document.createElement ('div');
+    divNumero.innerHTML = numPokemon;
+    let divNombre = document.createElement ('div');
+    divNombre.innerHTML = nombrePokemon;
     let nuevoDiv = document.createElement ('div');
-    nuevoDiv.appendChild (divTitulo)
-    divTitulo.classList.add ('cardTitulo')
+// Usamos el appendChild para mostrar el nombre y número en la card //
+    nuevoDiv.appendChild (divNumero);    
+    nuevoDiv.appendChild (divNombre);
     pokemonEnPantalla.appendChild(nuevoDiv);
+// Usamos el classlist para darle una class a cada elemento de la tarjeta y manipular las propiedades desde css)
+    divNumero.classList.add ('cardNumero')
+    divNombre.classList.add ('cardNombre')
+    imagen.classList.add ('cardImagen')
     nuevoDiv.classList.add ('card');
-    nuevoDiv.insertAdjacentElement ('afterbegin',imagen);
-  }
- 
+// El insertAdjacentElement nos permite mostrar la imagen de cada pokémon //
+    nuevoDiv.insertAdjacentElement ('beforeend',imagen);
+}
 
-
-
-
-
-
-
-
-
-  
-//const arrayPokemones = pokemones.pokemon
-//const arrayPokemones = pokemones.pokemon
-//for(let i = 0;i<arrayPokemones.length;i ++) {
-//   let nombrePokemon = arrayPokemones[i].name; 
-//}
-//let container = document.getElementById('pokemonEnPantalla')
-//let contenido = arrayPokemones
-//contenido.forEach (item => {
-//  container.innerHTML += `<p>${item}</p>`})
- 
-
-
-
-//for (const propiedades in arrayPokemones) {
-//    console.log(`${propiedades}: ${arrayPokemones[propiedades]}`);
-//    
-//  }
-//let propiedades = Object.keys (arrayPokemones)
-//console.log (propiedades)
-   
-
-//vamos a mostrar el arreglo en pantalla
-//let pkmData = Object.values(data.data);//
-
-
- 
-
-//document.getElementById ('pokemonEnPantalla').appendChild(container)
-//container.appendChild (contenido)
-
+       
+        /*if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      }); */
+            
+      
