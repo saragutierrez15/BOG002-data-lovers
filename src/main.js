@@ -1,5 +1,5 @@
 import data from './data/pokemon/pokemon.js';
-
+import { filtrado } from './data.js';
 
 const pokemonEnPantalla = document.getElementById('pokemonEnPantalla');
 //Creamos un for para obtener la imagen, el nombre y el numero de cada pokemon
@@ -27,8 +27,12 @@ for(let i = 0;i<data.pokemon.length;i ++) {
 // El insertAdjacentElement nos permite mostrar la imagen de cada pokémon //
     nuevoDiv.insertAdjacentElement ('beforeend',imagen);
 }
+document.getElementById('Acero-button').addEventListener('click',filtrado);
 
-       
+
+
+
+
         /*if (a.name > b.name) {
           return 1;
         }

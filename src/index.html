@@ -6,22 +6,62 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Pokémon</title>
-    
   </head>
-
-  <body>
-     <!-- --> 
-    <header>
-        <input type="checkbox" id="btn-menu">
-          <label for="btn-menu"><img src="images/menuHamburguesa.png"></label>
-          <nav class="menu">
-          <ul class="menu_items">
-            <li class="active"><a href="a">Filtrar</a></li>
-            <li><a href= "">Tipo</a></li>
-            <li><a href= "">Jugar ahora</a></li>
+     <!-- header start -->
+  <header class="header">
+    <div class="container">
+      <div class="header-main">
+        
+        <div class="open-nav-menu">
+          <span></span>
+        </div>
+        <!-- navigation menu start -->
+  
+        <nav class="nav-menu">
+          <div class="close-nav-menu">
+            <img src="images/close.png" alt="cerrar">
+          </div>
+          <ul class="menu">
+            <li class="menu-item menu-item-has-children">
+              <!-- Buscar que es la etiqueta i -->
+              <a href="#">Filtrar<i class="plus"></i></i></a>
+              <ul class="sub-menu">
+                <li class="menu-item"><a>A-Z</a></li>
+                <li class="menu-item"><a>Z-A</a></li>
+                <li class="menu-item"><a>Menor a mayor</a></li>
+                <li class="menu-item"><a>Mayor a menor</a></li>
+              </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+              <a href="#">Tipo<i class="plus"></i></a>
+              <ul class="sub-menu">
+                <li class="menu-item" id="Acero-button"><a href="#">Acero</a></li>
+                <li class="menu-item" id="Agua-button"><a href="#">Agua</a></li>
+                <li class="menu-item"><a href="#">Bicho</a></li>
+                <li class="menu-item"><a href="#">Dragón</a></li>
+                <li class="menu-item"><a href="#">Eléctrico</a></li>
+                <li class="menu-item"><a href="#">Fantasma</a></li>
+                <li class="menu-item"><a href="#">Hada</a></li>
+                <li class="menu-item"><a href="#">Hielo</a></li>
+                <li class="menu-item"><a href="#">Lucha</a></li>
+                <li class="menu-item"><a href="#">Fuego</a></li>
+                <li class="menu-item"><a href="#">Volador</a></li>
+                <li class="menu-item"><a href="#">Planta</a></li>
+                <li class="menu-item"><a href="#">Psíquico</a></li>
+                <li class="menu-item"><a href="#">Roca</a></li>
+                <li class="menu-item"><a href="#">Tierra</a></li>
+                <li class="menu-item"><a href="#">Veneno</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Jugar ahora</a>
+            </li>
           </ul>
-         </nav>
-    </header>
+        </nav>
+        <!-- navigation menu end -->
+    </div>
+  </header>
+ <body>
     <img class= logo src="images/pokemonp.png">
 
     <div>
