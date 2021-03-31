@@ -1,10 +1,7 @@
-import data from './data/pokemon/pokemon.js';
-const tiposPokemon = data.pokemon;
-const TipoGrass = tiposPokemon.filter(item => item.type.includes ('grass'));
-console.log (TipoGrass);
 
-export const filtrado = (tiposPokemon) => {
-  alert("Acción 1 pulsada");
+export const filtrado = (data, condition) => {
+  const todos=data.filter(item => item.type.includes (condition));
+  return todos
 }
 
 export const example = () => {
@@ -14,7 +11,6 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
 
 
 //const tiposPokemon = data.pokemon;

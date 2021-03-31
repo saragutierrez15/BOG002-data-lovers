@@ -27,8 +27,12 @@ for(let i = 0;i<data.pokemon.length;i ++) {
 // El insertAdjacentElement nos permite mostrar la imagen de cada pokémon //
     nuevoDiv.insertAdjacentElement ('beforeend',imagen);
 }
-document.getElementById('Acero-button').addEventListener('click',filtrado);
-
+document.getElementById('principal').addEventListener('click',filtradoDom);
+function filtradoDom(e){
+  let tipopoke=e.target.dataset.pokemonappid;
+  let x=filtrado(data.pokemon, tipopoke);
+  x.
+}
 
 
 
@@ -42,5 +46,3 @@ document.getElementById('Acero-button').addEventListener('click',filtrado);
         // a must be equal to b
         return 0;
       }); */
-            
-      
