@@ -1,12 +1,14 @@
 import data from './data/pokemon/pokemon.js';
 import { filtrado } from './data.js';
 
+
+function mostrandoEnPantalla(pokemonesListos){
 const pokemonEnPantalla = document.getElementById('pokemonEnPantalla');
 //Creamos un for para obtener la imagen, el nombre y el numero de cada pokemon
-for(let i = 0;i<data.pokemon.length;i ++) {
-    let nombrePokemon = data.pokemon[i]['name'].charAt(0).toUpperCase() + data.pokemon[i]['name'].slice(1);
-    let numPokemon = 'N.' + data.pokemon[i]['num'];
-    let urlImagen = data.pokemon[i]['img'];
+for(let i = 0;i<pokemonesListos.length;i ++){
+    let nombrePokemon = pokemonesListos[i]['name'].charAt(0).toUpperCase() + pokemonesListos[i]['name'].slice(1);
+    let numPokemon = 'N.' + pokemonesListos[i]['num'];
+    let urlImagen = pokemonesListos[i]['img'];
     let imagen = new Image (155,155);
     imagen.src = urlImagen; 
 // Creamos un div para mostrar el nombre y el numero del pokémon en la card //
@@ -26,13 +28,48 @@ for(let i = 0;i<data.pokemon.length;i ++) {
     nuevoDiv.classList.add ('card');
 // El insertAdjacentElement nos permite mostrar la imagen de cada pokémon //
     nuevoDiv.insertAdjacentElement ('beforeend',imagen);
+}     
 }
-document.getElementById('principal').addEventListener('click',filtradoDom);
-function filtradoDom(e){
-  let tipopoke=e.target.dataset.pokemonappid;
-  let x=filtrado(data.pokemon, tipopoke);
-  x.
+/*function todos() {
+    mostrandoEnPantalla(data.pokemon)
+    
 }
+window.onload = todos;*/
+
+document.getElementById('principal').addEventListener('click',filtradoCLick);
+
+function filtradoCLick(e){
+  let listaPokemones=e.target.dataset.pokemonappid;
+  let tipoPokemones=filtrado(data.pokemon, listaPokemones);
+    console.log (tipoPokemones)
+    if (listaPokemones =='all') {
+    mostrandoEnPantalla(data.pokemon);
+    } else {
+    mostrandoEnPantalla(tipoPokemones);
+    }
+    
+  }
+ 
+  
+//const selectElement = document.querySelector("menu-item");
+//console.log(selectElement)
+//selectElement.addEventListener('change', (event) => {
+//const resultado = document.querySelector('.pokemonEnPantalla');
+//  resultado.textContent = ${event.target.value}`;
+//});*/
+
+  /*let clear = document.querySelectorAll("menu-item");
+  clear.addEventListener("click", reload);
+  
+  function reload() {
+      listaPokemones = ();
+      salida.value = "";
+      posicion2.value = "";
+      tipoPokemones = {};
+      pokemonEnPantalla = {};
+       
+  }*/
+
 
 
 
