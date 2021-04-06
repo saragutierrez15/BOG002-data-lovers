@@ -3,7 +3,7 @@ import { filtrado } from './data.js';
 
 
 function mostrandoEnPantalla(pokemonesListos){
-const pokemonEnPantalla = document.getElementById('pokemonEnPantalla');
+const pokemonEnPantalla = document.getElementById('pokemonEnPantalla1');
 //Creamos un for para obtener la imagen, el nombre y el numero de cada pokemon
 for(let i = 0;i<pokemonesListos.length;i ++){
     let nombrePokemon = pokemonesListos[i]['name'].charAt(0).toUpperCase() + pokemonesListos[i]['name'].slice(1);
@@ -30,11 +30,11 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     nuevoDiv.insertAdjacentElement ('beforeend',imagen);
 }     
 }
-/*function todos() {
+function todos() {
     mostrandoEnPantalla(data.pokemon)
     
 }
-window.onload = todos;*/
+window.onload = todos;
 
 document.getElementById('principal').addEventListener('click',filtradoCLick);
 
@@ -43,10 +43,12 @@ function filtradoCLick(e){
   let tipoPokemones=filtrado(data.pokemon, listaPokemones);
     console.log (tipoPokemones)
     if (listaPokemones =='all') {
+    document.getElementById('pokemonEnPantalla1').innerHTML=''
     mostrandoEnPantalla(data.pokemon);
     } else {
+    document.getElementById('pokemonEnPantalla1').innerHTML=''
     mostrandoEnPantalla(tipoPokemones);
-    }
+    } 
     
   }
  
