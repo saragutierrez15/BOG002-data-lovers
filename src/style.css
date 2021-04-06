@@ -1,10 +1,13 @@
 /* Estilo interfaz página principal */
 body {
-    background-image: linear-gradient(to top, #fbc2eb 30%, #9c80df 100%);
+    background-image: linear-gradient(to top, #fa8bda 30%, #9c80df 100%);
     line-height: 1.5;
     font-family: Roboto;
     font-weight: 400;
  }
+ body.hidden-scrolling{
+   overflow-y:hidden;
+}
  *{
    margin:0;
    box-sizing: border-box;
@@ -21,15 +24,13 @@ body {
     padding-top: 6%;
    }
 .lupa {
-      position: absolute;
+      display:block;
       background-color: transparent;
       border-color: transparent;
       cursor: pointer;
       outline: none;
-      width: 500px;
-      height:60px;
-      left: 700px;
-      top: 305px; 
+      padding: 0,5rem;
+      box-sizing: border-box;
    }
 /*.btnmenu {
       background-color: transparent;
@@ -126,7 +127,7 @@ body {
    left: 10px;
    top: 185px;
    font-family: Roboto;
-   font-style: normal;
+   font-style:unset;
    display: flex;
    margin: auto;
    font-size: 20px;
@@ -157,8 +158,8 @@ a{
    display: flex;
    justify-content: space-between;
    align-items: center;
+   padding: 10px 0;
    border-radius: 4px;
-   display: flex;
    justify-content: flex-end;
 }
 
@@ -178,7 +179,7 @@ a{
    font-size: 16px;
    color: #ffffff;
    text-transform: capitalize;
-   transition: all 0.3s ease;
+   transition: all 0.3s ease;/*averiguar que es ease*/
 }
 .header .menu > .menu-item > a .plus{
    display: inline-block;
@@ -186,6 +187,7 @@ a{
    width: 12px;
    position: relative;
    margin-left: 5px ;
+   pointer-events: none;
 }
 .header .menu > .menu-item > a .plus:before,
 .header .menu > .menu-item > a .plus:after{
@@ -194,7 +196,7 @@ a{
    box-sizing: border-box;
    left: 50%;
    top: 50%;
-   background-color:  #fbc2eb;
+   background-color:  #fa8bda;
    height: 2px;
    width: 100%;
    transform: translate(-50%, -50%);
@@ -209,7 +211,7 @@ a{
 }    
 .header .menu > .menu-item > .sub-menu > .menu-item > a:hover,
 .header .menu > .menu-item:hover > a{
-   color:  #fbc2eb;
+   color:  #fa8bda;
 }
 /* Aquí creo el sub menu */
 .header .menu > .menu-item > .sub-menu{
@@ -220,7 +222,7 @@ a{
    top:100%;
    background-color: rgba(253, 245, 255, 1);
    padding: 10px 0;
-   border-top: 3px solid #fbc2eb;
+   border-top: 3px solid #fa8bda;
    transform: translateY(10px);
    transition: all 0.3s ease;
    opacity:0;
@@ -238,6 +240,11 @@ a{
 }
 .header .menu > .menu-item > .sub-menu > .menu-item{
    display: block;
+   padding: 10px 20px;
+   font-size:16px;
+   color:rgba(63, 62, 98, 1);
+   transition: all 0.3s ease;
+   text-transform: capitalize;
 }
 .header .menu > .menu-item > .sub-menu > .menu-item > a{
    display: block;
@@ -291,6 +298,18 @@ a{
 .header .close-nav-menu img{
    width: 16px;
 }
+.header .menu-overlay{
+	position: fixed;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.5);
+	left:0;
+	top:0;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+	opacity:0;
+	transition: all 0.3s ease;
+}
 /* home section */
 .home-section{
    width: 100%;
@@ -301,17 +320,27 @@ a{
 
 /* Responsive*/
 @media(max-width:991px){
+   .header .menu-overlay.active{
+      visibility: visible;
+      opacity: 1;
+}
    .header .nav-menu{
-       position: fixed;
-       right: 0;
-       width: 280px;
-       height: 100%;
-       top:0;
-       overflow-y: auto;
-       background-color: #222222;
-       z-index: 1000;
-       padding: 15px 0;
-   }
+      position: fixed;
+      right: -280px;
+      visibility: hidden;
+      width: 280px;
+      height: 100%;
+      top:0;
+      overflow-y: auto;
+      background-color:rgba(253, 245, 255, 1);
+      z-index: 1000;
+      padding: 15px 0;
+      transition: all 0.5s ease;
+  }
+  .header .nav-menu.open{
+   visibility: visible;
+   right: 0px;
+}
    .header .menu > .menu-item{
        display:block;
        margin: 0;
@@ -321,25 +350,45 @@ a{
        justify-content: space-between;
        align-items: center;
    }
-
    .header .menu > .menu-item > a{
-       color: #ffffff;
+       color: rgba(63, 62, 98, 1);
        padding: 12px 15px;
        border-bottom: 1px solid #333333;
    }
    .header .menu > .menu-item:first-child > a{
-       border-top:1px solid  #333333;
+       border-top:1px solid  #333333; /*líneas del menú*/
    }
    .header .menu > .menu-item > a .plus:before, 
    .header .menu > .menu-item > a .plus:after{
-       background-color: powderblue;
+       background-color: rgb(255, 255, 255);
    }
+   .header .menu > .menu-item-has-children.active > a .plus:after{
+      transform: translate(-50%,-50%) rotate(0deg);
+ }
    .header .menu > .menu-item > .sub-menu{
-       width: 100%;
+   width: 100%;
+   position: relative;
+   opacity: 1;
+   visibility: visible;
+   border:none;
+   background-color: transparent;
+   box-shadow: none;
+   transform: translateY(0px);
+   padding: 0px;
+   left: auto;
+   top:auto;
+   max-height: 0;
+   overflow: hidden;
    }
-   .header .open-nav-menu{
-       display: flex;
-   }    
+   .header .menu > .menu-item > .sub-menu > .menu-item > a{
+		padding: 12px 45px;
+		color: #ffffff;
+		border-bottom: 1px solid #333333;
+	}
+    .header .close-nav-menu,
+	.header .open-nav-menu{
+		display: flex;
+	}  
 }
    
 
