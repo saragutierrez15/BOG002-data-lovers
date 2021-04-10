@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Pokémon</title>
   </head>
@@ -15,7 +16,8 @@
         <div class="open-nav-menu">
           <span></span>
         </div>
-
+        <div class="menu-overlay">
+        </div>
         <!-- navegación en menu inicial (Filtrar, Tipos y Jugar ahora) -->
         <nav class="nav-menu">
           <!-- cerrar menu hamburguesa -->
@@ -25,17 +27,15 @@
           <ul  class="menu">
             <li class="menu-item menu-item-has-children">
               <!-- lo que esta en la etiqueta i es el signo + -->
-              <a href="#">Filtrar<i class="plus"></i></a>
-              <ul class="sub-menu">
-                <li class="menu-item"><a href="#">A-Z</a></li>
-                <li class="menu-item"><a href="#">Z-A</a></li>
-                <li class="menu-item"><a href="#">Menor a mayor</a></li>
-                <li class="menu-item"><a href="#">Mayor a menor</a></li>
+              <a href="#" data-toggle="sub-menu">Filtrar<i class="plus"></i></a>
+              <ul id =lista class="sub-menu">
+                <li class="menu-item"><a href="#" data-pokemonorderid="asc">A-Z</a></li>
+                <li class="menu-item"><a href="#" data-pokemonorderid="desc">Z-A</a></li>
               </ul>
             </li>
             <!-- este li hace referencia a un item que tiene un sub menu -->
             <li class="menu-item menu-item-has-children">
-              <a href="#">Tipo<i class="plus"></i></a>
+              <a href="#" data-toggle="sub-menu">Tipo<i class="plus"></i></a>
               <ul id =principal class="sub-menu">
                 <li class="menu-item"><a href="#" data-pokemonappid="all">Todos</a></li>
                 <li class="menu-item"><a href="#" data-pokemonappid="steel">Acero</a></li>
@@ -59,7 +59,7 @@
               </ul>
             </li>
             <li class="menu-item">
-              <a href="#">Jugar ahora</a>
+              <a href="https://pokemongolive.com/es/" target="_black">Jugar ahora</a>
             </li>
           </ul>
         </nav>
@@ -71,12 +71,12 @@
 
     <div>
       <input id = "input" type="text" placeholder="Nombre o número">
-      <button class="lupa" name="boton" type="submit"><img src="images/lupa.png"></button>
+     <!-- <button class="lupa" name="boton" type="submit"><img src="images/lupa.png"></button>-->
     </div>
-    
+
     <div class= "pokemonEnPantalla" id ="pokemonEnPantalla1"></div>
     <script src="main.js" type="module"></script>
 
   </body>
-  <footer>Holaaa</footer>
+ 
 </html>
