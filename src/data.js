@@ -24,14 +24,11 @@ export const ordenarAlfab = (data, sortBy) => {
    })
   };
   
-  export const barraBusqueda = (data,input) => {
-    const caracterEncontrado  = []
-    data.forEach(element => {
-      if (element.name.toLowerCase().includes(input))
-      caracterEncontrado.push(element);      
-    });
-    return caracterEncontrado; 
-  }
+  export const barraBusqueda = (data, condition) => {
+    const nombresBuscados =data.filter(item => item.name.includes(condition));
+    return nombresBuscados
+  };
+  
 
     
  export const anotherExample = () => {

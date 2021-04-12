@@ -115,8 +115,7 @@ body {
     
 }
 .cardTipo {
-   position: relative;
-   top: 70%;
+   display: flex;
    font-size: 20px;
    color:white;
    background: rgba(255, 255, 255, 0.25); 
@@ -126,15 +125,12 @@ body {
 .cardImagen{
    display: flex;
    margin: auto;
-   margin-bottom: 90px;
 }
 
 .cardNombre {
    position: relative;
    width: 107px;
-   height: 22px;
    left: 10px;
-   top: 205px;
    font-family: Roboto;
    font-style:unset;
    display: flex;
@@ -174,7 +170,6 @@ a{
 
 .header .nav-menu{
    padding: 0 15px;
-   
 }
 /* Aquí modifico agrego el relative para que tome la posición el sub menu */
 .header .menu > .menu-item{
@@ -224,12 +219,12 @@ a{
 }
 /* Aquí creo el sub menu */
 .header .menu > .menu-item > .sub-menu{
-   box-shadow: 0 0 10px rgba(63, 62, 98, 1);;
+   box-shadow: 0 0 10px rgba(63, 62, 98, 1);
    width: 220px;
    position: absolute;
    left:0;
    top:100%;
-   background-color: rgba(253, 245, 255, 1);
+   background-color:  rgba(253, 245, 255, 1);
    padding: 10px 0;
    border-top: 3px solid #fa8bda;
    transform: translateY(10px);
@@ -276,7 +271,7 @@ a{
    display: block;
    height: 3px;
    width: 24px;
-   background-color: #000000;
+   background-color: rgba(253, 245, 255, 1);
    position: relative;
 }
 .header .open-nav-menu span:before,
@@ -286,7 +281,7 @@ a{
    left:0;
    width: 100%;
    height: 100%;
-   background-color: #000000;
+   background-color: rgba(253, 245, 255, 1);
    box-sizing: border-box;
 }
 .header .open-nav-menu span:before{
@@ -369,7 +364,7 @@ a{
    }
    .header .menu > .menu-item > a .plus:before, 
    .header .menu > .menu-item > a .plus:after{
-       background-color: rgb(255, 255, 255);
+      background-color:  #fa8bda;
    }
    .header .menu > .menu-item-has-children.active > a .plus:after{
       transform: translate(-50%,-50%) rotate(0deg);
@@ -391,7 +386,7 @@ a{
    }
    .header .menu > .menu-item > .sub-menu > .menu-item > a{
 		padding: 12px 45px;
-		color: #ffffff;
+		color: rgba(63, 62, 98, 1); 
 		border-bottom: 1px solid #333333;
 	}
     .header .close-nav-menu,

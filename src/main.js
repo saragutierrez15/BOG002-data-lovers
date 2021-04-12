@@ -22,7 +22,7 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     divTipo.innerHTML = tipoPokemon;
     let nuevoDiv = document.createElement ('div');
 
-    // Usamos el classlist para darle una class a cada elemento de la tarjeta y manipular las propiedades desde css)
+// Usamos el classlist para darle una class a cada elemento de la tarjeta y manipular las propiedades desde css)
     divNumero.classList.add ('cardNumero')
     divNombre.classList.add ('cardNombre')
     imagen.classList.add ('cardImagen')
@@ -34,12 +34,8 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     nuevoDiv.appendChild (imagen);  
     nuevoDiv.appendChild (divNombre);
     nuevoDiv.appendChild (divTipo);
-    pokemonEnPantalla1.appendChild(nuevoDiv);
-
-
-    
-// El insertAdjacentElement nos permite mostrar la imagen de cada pokémon //
-    
+    pokemonEnPantalla1.appendChild(nuevoDiv); 
+   
 }     
 }
 window.onload = mostrandoEnPantalla(data.pokemon);
@@ -81,10 +77,10 @@ document.getElementById('input').addEventListener('keyup', buscar);
 
 function buscar () {
   let barraB = document.getElementById('input').value.toLowerCase(); 
-  let textoIngresado = filtrado(data.pokemon, barraB)
-  console.log (textoIngresado)
-  if (barraB === ''){
+  let textoIngresado = barraBusqueda(data.pokemon, barraB)
+    if (barraB === ''){
     document.getElementById('pokemonEnPantalla1').innerHTML=''
+    mostrandoEnPantalla (data.pokemon)
   } else {
     document.getElementById('pokemonEnPantalla1').innerHTML=''
     mostrandoEnPantalla (textoIngresado);
@@ -125,11 +121,11 @@ function buscar () {
             collapseSubMenu();
         }
         else{
-          // collapse existing expanded menuItemHasChildren
+          // contraer menuItemHasChildren 
           if(navMenu.querySelector(".menu-item-has-children.active")){
             collapseSubMenu();
           }
-          // expand new menuItemHasChildren
+          // Expandir nuevo menuItemHasChildren
           menuItemHasChildren.classList.add("active");
           const subMenu = menuItemHasChildren.querySelector(".sub-menu");
           subMenu.style.maxHeight = subMenu.scrollHeight + "px";
@@ -147,7 +143,7 @@ function buscar () {
        if(navMenu.classList.contains("open")){
            toggleNav();
        }
-       // if menuItemHasChildren is expanded , collapse it
+       // si menuItemHasChildren se expande, colapsa
        if(navMenu.querySelector(".menu-item-has-children.active")){
             collapseSubMenu();
      }
