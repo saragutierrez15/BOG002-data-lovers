@@ -8,9 +8,10 @@ const pokemonEnPantalla1= document.getElementById('pokemonEnPantalla1');
 for(let i = 0;i<pokemonesListos.length;i ++){
     let nombrePokemon = pokemonesListos[i]['name'].charAt(0).toUpperCase() + pokemonesListos[i]['name'].slice(1);
     let numPokemon = 'N.' + pokemonesListos[i]['num'];
-    let tipoPokemon = 'Tipo: ' + pokemonesListos[i]['type'].join(" - ");
+    let tipoPokemon = 'Tipo:   ' + pokemonesListos[i]['type'].join(" / ");
+    let debilidadPokemon = 'Debilidad:   ' + pokemonesListos[i]['weaknesses'].join(" / ");
     let urlImagen = pokemonesListos[i]['img'];
-    let imagen = new Image (155,155);
+    let imagen = new Image (170,170);
     imagen.src = urlImagen; 
 
 // Creamos un div para mostrar el nombre y el numero del pokémon en la card //
@@ -20,6 +21,8 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     divNombre.innerHTML = nombrePokemon;
     let divTipo = document.createElement ('div');
     divTipo.innerHTML = tipoPokemon;
+    let divDebilidad = document.createElement ('div');
+    divDebilidad.innerHTML = debilidadPokemon;
     let nuevoDiv = document.createElement ('div');
 
 // Usamos el classlist para darle una class a cada elemento de la tarjeta y manipular las propiedades desde css)
@@ -27,6 +30,7 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     divNombre.classList.add ('cardNombre')
     imagen.classList.add ('cardImagen')
     divTipo.classList.add ('cardTipo');
+    divDebilidad.classList.add ('cardDebilidad');
     nuevoDiv.classList.add ('card');
 
 // Usamos el appendChild para mostrar el nombre y número en la card //
@@ -34,6 +38,7 @@ for(let i = 0;i<pokemonesListos.length;i ++){
     nuevoDiv.appendChild (imagen);  
     nuevoDiv.appendChild (divNombre);
     nuevoDiv.appendChild (divTipo);
+    nuevoDiv.appendChild (divDebilidad);
     pokemonEnPantalla1.appendChild(nuevoDiv); 
    
 }     
@@ -139,7 +144,7 @@ function buscar () {
       .classList.remove("active");
   }
   function resizeFix(){
-       // if navMenu is open ,close it
+       // si navMenu esta abierto ,este se cierra
        if(navMenu.classList.contains("open")){
            toggleNav();
        }
