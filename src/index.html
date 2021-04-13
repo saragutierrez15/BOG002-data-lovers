@@ -28,7 +28,7 @@
             <li class="menu-item menu-item-has-children">
               <!-- lo que esta en la etiqueta i es el signo + -->
               <a href="#" data-toggle="sub-menu">Filtrar<i class="plus"></i></a>
-              <ul id =lista class="sub-menu">
+              <ul id ="lista" class="sub-menu">
                 <li class="menu-item"><a href="#" data-pokemonorderid="asc">A-Z</a></li>
                 <li class="menu-item"><a href="#" data-pokemonorderid="desc">Z-A</a></li>
               </ul>
@@ -36,7 +36,7 @@
             <!-- este li hace referencia a un item que tiene un sub menu -->
             <li class="menu-item menu-item-has-children">
               <a href="#" data-toggle="sub-menu">Tipo<i class="plus"></i></a>
-              <ul id =principal class="sub-menu">
+              <ul id ="principal" class="sub-menu">
                 <li class="menu-item"><a href="#" data-pokemonappid="all">Todos</a></li>
                 <li class="menu-item"><a href="#" data-pokemonappid="steel">Acero</a></li>
                 <li class="menu-item"><a href="#" data-pokemonappid="water">Agua</a></li>
@@ -63,15 +63,14 @@
             </li>
           </ul>
         </nav>
-        <!-- navigation menu end -->
     </div>
+  </div>
   </header>
  <body>
-    <img class= logo src="images/pokemonp.png">
+    <img class="logo" src="images/pokemonp.png">
 
     <div>
-      <input id = "input" type="text" placeholder="Nombre">
-     <!-- <button class="lupa" name="boton" type="submit"><img src="images/lupa.png"></button>-->
+      <input id = "input" type="text" class="text" placeholder="   Escribe el nombre del Pokémon...">
     </div>
 
     <div class= "pokemonEnPantalla" id ="pokemonEnPantalla1"></div>

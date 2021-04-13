@@ -13,16 +13,6 @@ export const ordenarAlfab = (data, sortBy) => {
     if (sortBy === 'desc'){ordenar.reverse()}
   return ordenar
 };
-
-  export const ordenarNum = (data) => {
-  const ordenar2 = data.sort(function(a,b) {
-  if (a.num > b.num){
-  return -1;
-  } else {
-    return 1
-  }
-   })
-  };
   
   export const barraBusqueda = (data, condition) => {
     const nombresBuscados =data.filter(item => item.name.includes(condition));

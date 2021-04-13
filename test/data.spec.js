@@ -1,9 +1,57 @@
-import {filtrado, ordenarAlfab, barraBusqueda} from'../src/data.js';
+import {filtrado} from'../src/data.js';
 import data from '../src/data/pokemon/pokemon.js';
 
-const tiposPokemon = [{name: "forretress", num: "205", type: ["steel"]},{name: "steelix",num: "212",type:["steel"]},{name: "scizor",num: "227",type:["steel"]},{name: "skarmory",num: "208",type:["steel"]}]
 
-  
+const tiposFiltrados = [
+  {
+    "num": "207",
+    "name": "forretress",
+    "type": [
+      "bug",
+      "steel"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+  },
+  {
+    "num": "208",
+    "name": "steelix",
+    "type": [
+      "steel",
+      "ground"
+    ],
+    "weaknesses": [
+      "fire",
+      "water",
+      "fighting",
+      "ground"
+    ],
+  },
+  {
+    "num": "212",
+    "name": "scizor",
+    "type": [
+      "bug",
+      "steel"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+  },
+  {
+    "num": "227",
+    "name": "skarmory",
+    "type": [
+      "steel",
+      "flying"
+    ],
+    "weaknesses": [
+      "fire",
+      "electric"
+    ],
+  },
+];
 
 
 describe('filtar por tipo', () => {
@@ -11,12 +59,14 @@ describe('filtar por tipo', () => {
   expect(typeof filtrado).toBe('function');
   });
 
-  it('debería retornar "steel" para "la opción del menú" con una condicion Acero', () => { 
-      expect(filtrado(data.pokemon, "steel")).toBe(tiposPokemon);
+  it('debería retornar "tiposFiltrados" para la opción del menú con una condicion Acero', () => { 
+      expect(filtrado(data,'steel')).toEqual(tiposFiltrados);
   });
 });
 
-
+/*it('returns `${filteredPokemons2} Poison`', () => {
+  expect(filterPokemon(pokemonsDummyData, 'Poison')).toEqual(filteredPokemons2);
+});*/
 
 //describe('buscar por nombre', () => {
 //  it('is a function', () => {
