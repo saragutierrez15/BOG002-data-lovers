@@ -1,6 +1,7 @@
 import {filtrado, ordenarAlfab, barraBusqueda} from'../src/data.js';
 import data from '../src/data/pokemon/pokemon.js';
 
+let assertEqual = require('assert');
 const tiposPokemon = [{name: "forretress", num: "205", type: ["steel"]},{name: "steelix",num: "212",type:["steel"]},{name: "scizor",num: "227",type:["steel"]},{name: "skarmory",num: "208",type:["steel"]}]
 
   
