@@ -17,5 +17,6 @@ export const ordenarAlfab = (data, sortBy) => {
   export const barraBusqueda = (data, condition) => {
     const nombresBuscados =data.filter(item => item.name.includes(condition));
     return nombresBuscados
-  }; 
+  };
+  
 
