@@ -92,7 +92,44 @@ function buscar () {
   }
 } 
 
-  
+/*for(let i = 0;i<data.pokemon.length;i ++){
+  let eggs = data.pokemon[i]['egg'];
+  const filtrado = () => {
+  let eggsdosk = eggs.filter(item => item.eggs.includes('2 km'));
+  console.log(filtrado(eggsdosk))
+}*/
+
+let huevos= data.pokemon.filter(function(ele){
+  return ele.egg == "2 km";
+});
+console.log(huevos);
+
+let altura= data.pokemon.filter(function(ele){
+  return ele.size.height > "0.3 m";
+});
+console.log(altura);
+
+let sortNum = data.pokemon.map(function(ele){
+ ele.size.weight = parseFloat(ele.size.weight) //el igual es para asignar un valor
+ return (ele)
+})
+ console.log(sortNum)
+
+let pesoPoke= data.pokemon.sort(function(a,b){
+  let pesoNum= parseFloat(a.size.weight)
+  let pesoNum1= parseFloat(b.size.weight)
+  if (pesoNum > pesoNum1){
+    return 1;
+    }
+    else {return -1}
+})
+console.log(pesoPoke);
+
+
+
+
+
+
 
 
   /* funciones del menu desplegable*/
